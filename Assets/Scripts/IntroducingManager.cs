@@ -24,6 +24,7 @@ public class IntroducingManager : MonoBehaviour
 	[Header("Material Behaviours")]
 	[SerializeField] private MaterialBehaviour familyPicture;
 	[SerializeField] private MaterialBehaviour tkdPicture;
+	[SerializeField] private MaterialBehaviour tennisBall;
 	
 	[Header("Computer")]
 	[SerializeField] private bool isComputerOn;
@@ -79,6 +80,39 @@ public class IntroducingManager : MonoBehaviour
 				"이번 학기에는 SNUGDC에서 홍보장으로 활동하게 되었어!",
 				"얼마전 동소제에서는 실무진 1인 개발 대회에 참여하기도 했어.",
 				"사실 이 프로그램도 1인 개발 대회 출품작을 개조해서 만든 거야."
+			}
+		},
+
+		{
+			"steam", new []
+			{
+				"나는 주로 STEAM에서 게임을 해.",
+				"STEAM에서는 대형 개발사에서 개발한 AAA급 게임부터 소수의 인원들이 개발한 인디게임까지 다양한 게임들을 즐길 수 있어.",
+				"가장 좋아하는 게임은 Project Zomboid라는 게임이야.",
+				"그 외에도 시티즈, 문명, 더 헌터라는 게임도 좋아해!",
+				"슬프게도 요즘에는 코딩을 하느라 게임을 많이 하지 못했어.",
+				"게임을 만드느라 게임을 못하는 안타까운 상황이 되어버렸지."
+			}
+		},
+
+		{
+			"tennis", new []
+			{
+				"나는 고등학교를 다니던 때에 전혀 공부를 하지 않았어.",
+				"어른들이 입을 모아 \"공부해라\"라고 말하는 데에 반발감이 들었거든.",
+				"그래서 과감하게 대학 진학을 포기하고 내가 하고 싶은 일에 대해 생각해 봤어.",
+				"자연스럽게 내 진로는 그때 당시 푹 빠져 있던 테니스로 정해졌어.",
+				"국제 테니스 심판이 되기 위해서 국내 테니스 심판 자격증도 취득하고 영어 공부도 열심히 했어.",
+				"하지만, 고등학교 졸업 후 시작한 테니스 심판 생활은 내 상상과는 거리가 있었어.",
+				"열악한 환경, 고된 일, 사람들과의 신경전 속에서 이번에는 내 진로가 아닌 \'나\' 그 자체에 대해 진지하게 고민하게 되었어.",
+				"내가 가장 좋아하는 일은 무엇일까?",
+				"내게 가장 소중한 것은 무엇일까?",
+				"내가 가장 행복할 때는 언제일까?",
+				"그 고민 끝에는 게임이 있었어.",
+				"그렇게 약 1년 반 동안의 테니스 심판 생활은 막을 내리게 되었고 나는 수능 공부를 시작했어.",
+				"수능 공부를 할 때에는 1년 반 동안 허송 세월을 보냈다는 불안감이 존재했어.",
+				"하지만 지금 돌이켜보면 전혀 그렇지 않은 것 같아.",
+				"그 시간 동안 아주 많은 것들을 배울 수 있으니까 말이야."
 			}
 		}
 	};
@@ -195,6 +229,13 @@ public class IntroducingManager : MonoBehaviour
 		tkdPicture.TurnOffMaterial();
 	}
 
+	public void TennisClicked()
+	{
+		if (isIntroducing) return;
+		StartCoroutine(StartIntroducing("tennis"));
+		tennisBall.TurnOffMaterial();
+	}
+
 
 
 
@@ -235,5 +276,11 @@ public class IntroducingManager : MonoBehaviour
 		if (isIntroducing) return;
 		GameManager.PlaySfx(2);
 		StartCoroutine(StartIntroducing("gdc"));
+	}
+	public void SteamClicked()
+	{
+		if (isIntroducing) return;
+		GameManager.PlaySfx(2);
+		StartCoroutine(StartIntroducing("steam"));
 	}
 }
