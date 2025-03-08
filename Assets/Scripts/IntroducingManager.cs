@@ -28,6 +28,8 @@ public class IntroducingManager : MonoBehaviour
 	[SerializeField] private MaterialBehaviour snuPicture;
 	[SerializeField] private MaterialBehaviour books;
 	[SerializeField] private MaterialBehaviour ds;
+	[SerializeField] private MaterialBehaviour sunset;
+	[SerializeField] private MaterialBehaviour radio;
 	
 	[Header("Computer")]
 	[SerializeField] private bool isComputerOn;
@@ -42,7 +44,7 @@ public class IntroducingManager : MonoBehaviour
 		{ "greeting", new []
 			{
 				"안녕? 내 이름은 이서영이야. 만나서 반가워.",
-				"나에 대해 궁금한 점이 있다면, 이 방 안의 물건들을 클릭해봐!"
+				"나에 대해 궁금한 점이 있다면, 이 방 안의 물건들을 클릭해 봐!"
 			}
 		},
 		
@@ -51,7 +53,7 @@ public class IntroducingManager : MonoBehaviour
 				"나는 형제자매 없이 엄마, 아빠 셋이서만 살았어.",
 				"외동으로 태어났지만, 외가 친척 모두가 가까운 곳에 살았기에 전혀 외롭지 않았어.",
 				"이따금씩 우리 엄마는 나에게 세 명의 엄마가 있다고 말씀하셔.",
-				"나를 낳아주신 우리 엄마, 나를 키워주신 할머니, 나를 가르쳐주신 이모.",
+				"나를 낳아주신 우리 엄마, 나를 키워주신 할머니, 나를 가르쳐 주신 이모.",
 				"그만큼 나는 많은 사랑을 받고 자랐어.",
 				"이 사진은 작년 겨울 모두 함께 후쿠오카로 여행을 가서 찍은 사진이야.",
 				"맛있는 것도 잔뜩 먹고, 따뜻한 물에 몸도 담그고, 나에게는 아주 행복한 기억으로 남아있어."
@@ -61,8 +63,8 @@ public class IntroducingManager : MonoBehaviour
 		{ "tkd", new []
 			{
 				"태권도부는 나에게 안식처 같은 곳이야.",
-				"좋은 친구들과 함께 웃고 떠들며 운동을 하다보면 많은 힘을 얻을 수 있어.",
-				"이 사진은 얼마전 도쿄대 태권도부와 교류전을 진행했을 때 찍은 사진이야.",
+				"좋은 친구들과 함께 웃고 떠들며 운동을 하다 보면 많은 힘을 얻을 수 있어.",
+				"이 사진은 얼마 전 도쿄대 태권도부와 교류전을 진행했을 때 찍은 사진이야.",
 				"정말 감사하게도 도쿄대 분들이 매년 우리 태권도부를 찾아와 주고 계셔.",
 				"한국에 머무르는 동안 맛집도 가고, 술도 마시고, 정말 즐거웠어!",
 				"이번 여름 방학에는 도쿄에 찾아가서 함께 놀 생각이야."
@@ -73,8 +75,8 @@ public class IntroducingManager : MonoBehaviour
 			{
 				"내 꿈은 재밌는 게임을 만드는 거야.",
 				"그 꿈을 이루기 위해 들어간 동아리가 중앙 게임 개발 동아리 SNUGDC야.",
-				"이번 학기에는 SNUGDC에서 홍보장으로 활동하게 되었어!",
-				"얼마전 동소제에서는 실무진 1인 개발 대회에 참여하기도 했어.",
+				"이번 학기에는 SNUGDC에서 홍보장으로 활동하게 되었어.",
+				"얼마 전 동소제에서는 실무진 1인 개발 대회에 참여하기도 했어.",
 				"사실 이 프로그램도 1인 개발 대회 출품작을 개조해서 만든 거야."
 			}
 		},
@@ -83,7 +85,7 @@ public class IntroducingManager : MonoBehaviour
 			"steam", new []
 			{
 				"나는 주로 STEAM에서 게임을 해.",
-				"STEAM에서는 대형 개발사에서 개발한 AAA급 게임부터 소수의 인원들이 개발한 인디게임까지 다양한 게임들을 즐길 수 있어.",
+				"STEAM에서는 대형 개발사에서 개발한 AAA 급 게임부터 소수의 인원들이 개발한 인디게임까지 다양한 게임들을 즐길 수 있어.",
 				"가장 좋아하는 게임은 Project Zomboid라는 게임이야.",
 				"그 외에도 시티즈, 문명, 더 헌터라는 게임도 좋아해!",
 				"슬프게도 요즘에는 코딩을 하느라 게임을 많이 하지 못했어.",
@@ -106,7 +108,7 @@ public class IntroducingManager : MonoBehaviour
 				"내가 가장 행복할 때는 언제일까?",
 				"그 고민 끝에는 게임이 있었어.",
 				"그렇게 약 1년 반 동안의 테니스 심판 생활은 막을 내리게 되었고 나는 수능 공부를 시작했어.",
-				"수능 공부를 할 때에는 1년 반 동안 허송 세월을 보냈다는 불안감이 존재했어.",
+				"수능 공부를 할 때에는 1년 반 동안 허송세월을 보냈다는 불안감이 존재했어.",
 				"하지만 지금 돌이켜보면 전혀 그렇지 않은 것 같아.",
 				"그 시간 동안 아주 많은 것들을 배울 수 있으니까 말이야."
 			}
@@ -127,8 +129,8 @@ public class IntroducingManager : MonoBehaviour
 				"비록 나는 컴퓨터를 공부하는 공학도이지만, 문학을 사랑해.",
 				"좋은 글을 읽으면 달콤한 사과 냄새, 비가 온 뒤의 아스팔트 냄새, 밀려오는 바다의 짠 냄새, 온갖 냄새를 다 맡을 수 있거든.",
 				"가장 좋아하는 작가는 김유정이고, 가장 좋아하는 작품은 소낙비야.",
-				"소낙비를 읽을 때면 한 여름의 쿱쿱하고 불쾌한 냄새가 나.",
-				"수능 문학 속 김유정은 순수함을 그려내는 작가라는 느낌이 강했지만, 김유정 전집 속 김유정은 전혀 다르다는 것을 깨닫고 큰 충격을 받았어."
+				"소낙비를 읽을 때면 한여름의 쿱쿱하고 불쾌한 냄새가 나.",
+				"수능 문학 속 김유정은 순수함을 그려내는 작가라는 느낌이 강했지만, 김유정 전집 속 김유정은 전혀 다르다는 것을 깨닫고 받은 충격을 아직도 잊을 수 없어."
 			}
 		},
 
@@ -137,12 +139,38 @@ public class IntroducingManager : MonoBehaviour
 			{
 				"게임에 관한 나의 가장 오래된 기억은 닌텐도ds를 처음 받았을 때야.",
 				"초등학교 2학년 크리스마스 선물로 부모님을 조르고 졸라서 얻은 게임기지.",
-				"엄마는 절대 못 사주신다며 나를 꾸짖었지만, 결국에는 크리스마스 당일날 아빠가 닌텐도ds를 들고 오시더라.",
+				"엄마는 절대 못 사주신다며 나를 꾸짖었지만, 결국에는 크리스마스 당일 아빠가 닌텐도ds를 들고 오시더라.",
 				"아빠는 TT칩에 여러 게임들을 넣어주셨어.",
 				"그때는 이게 불법인지도 모르고 재밌게 플레이했었지.",
 				"동물의 숲, 리듬 히어로, 리듬 천국, 마리오64, 레이튼 교수 시리즈...",
 				"매일같이 수많은 게임들을 플레이했어.",
 				"게임에 행복이라는 단어를 결부하기 시작한 것은 이때부터인 것 같아."
+			}
+		},
+
+		{
+			"sunset", new []
+			{
+				"이모 댁에는 엄청 커다란 고양이가 있어.",
+				"이름은 노을이고 올해로 11살 할아버지 고양이야.",
+				"코에 바보 같은 점이 있는데, 그게 매력 포인트야!",
+				"노을이를 처음 만난 건 10년 전 겨울이었어.",
+				"사촌 언니의 친구분께서 아파트 엘리베이터 앞에서 어떤 고양이가 지나가는 사람들에게 애교를 부리고 있는 것을 발견했대.",
+				"아무래도 길고양이는 아닌 것 같아서 친구분께서 임시보호를 시작하셨고, 결국 주인을 찾지 못해서 언니 집에 오게 되었어.",
+				"노을이가 처음 이모 댁에 오던 때에 짙은 노을이 지고 있었대.",
+				"마침 털 색깔도 노란색이니 이름을 \'노을\'로 짓게 되었대.",
+				"겁도 많고 자주 삐지고 바보 같은 고양이지만, 세상에서 가장 귀여워!"
+			}
+		},
+
+		{
+			"radio", new []
+			{
+				"지금 나오고 있는 노래 어때?",
+				"나의 가장 친한 친구가 중학교 시절의 추억을 떠올리며 직접 작곡한 곡이야.",
+				"친구와는 같은 자유전공학부이지만, 처음 만난 건 태권도부에서야.",
+				"성격도 잘 맞고 말도 잘 통해서 금방 친해지게 되었어.",
+				"내 스스로를 있는 그대로 인정해 주고 존중해 주는, 나에게 둘도 없는 소중한 존재야."
 			}
 		}
 	};
@@ -179,7 +207,7 @@ public class IntroducingManager : MonoBehaviour
 		
 		yield return StartIntroducing("greeting");
 		GameManager.PlayBgm(0);
-		GameManager.SetBgmVolume(0.1f);
+		GameManager.SetBgmVolume(0.4f);
 	}
 
 	private void Update()
@@ -280,6 +308,18 @@ public class IntroducingManager : MonoBehaviour
 		if (isIntroducing) return;
 		StartCoroutine(StartIntroducing("ds"));
 		ds.TurnOffMaterial();
+	}
+	public void SunsetClicked()
+	{
+		if (isIntroducing) return;
+		StartCoroutine(StartIntroducing("sunset"));
+		sunset.TurnOffMaterial();
+	}
+	public void RadioClicked()
+	{
+		if (isIntroducing) return;
+		StartCoroutine(StartIntroducing("radio"));
+		radio.TurnOffMaterial();
 	}
 
 
