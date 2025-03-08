@@ -70,6 +70,16 @@ public class IntroducingManager : MonoBehaviour
 				"한국에 머무르는 동안 맛집도 가고, 술도 마시고, 정말 즐거웠어!",
 				"이번 여름 방학에는 도쿄에 찾아가서 함께 놀 생각이야."
 			}
+		},
+
+		{ "gdc", new []
+			{
+				"내 꿈은 재밌는 게임을 만드는 거야.",
+				"그 꿈을 이루기 위해 들어간 동아리가 중앙 게임 개발 동아리 SNUGDC야.",
+				"이번 학기에는 SNUGDC에서 홍보장으로 활동하게 되었어!",
+				"얼마전 동소제에서는 실무진 1인 개발 대회에 참여하기도 했어.",
+				"사실 이 프로그램도 1인 개발 대회 출품작을 개조해서 만든 거야."
+			}
 		}
 	};
 
@@ -212,12 +222,18 @@ public class IntroducingManager : MonoBehaviour
 		desktopScreen.SetActive(false);
 		folderScreen.SetActive(true);
 	}
-
 	public void CloseFolderClicked()
 	{
 		if (isIntroducing) return;
 		GameManager.PlaySfx(2);
 		desktopScreen.SetActive(true);
 		folderScreen.SetActive(false);
+	}
+
+	public void GdcClicked()
+	{
+		if (isIntroducing) return;
+		GameManager.PlaySfx(2);
+		StartCoroutine(StartIntroducing("gdc"));
 	}
 }
