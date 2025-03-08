@@ -22,6 +22,9 @@ public class IntroducingManager : MonoBehaviour
 	[SerializeField] private bool isIntroducing;
 	[SerializeField] private bool isSkipClicked;
 	
+	[Header("Material Behaviours")]
+	[SerializeField] private MaterialBehaviour familyPicture;
+	
 	private Dictionary<string, string[]> _introducingData = new Dictionary<string, string[]>()
 	{
 		{ "greeting", new []
@@ -46,7 +49,7 @@ public class IntroducingManager : MonoBehaviour
 
 	private void Awake()
 	{
-		powerOffPanel.SetActive(false);
+		powerOffPanel.SetActive(true);
 		fadePanel.SetActive(true);
 		speechBubble.SetActive(false);
 	}
@@ -70,7 +73,9 @@ public class IntroducingManager : MonoBehaviour
 		}
 		fadePanel.SetActive(false);
 		
-		StartCoroutine(StartIntroducing("greeting"));
+		yield return StartIntroducing("greeting");
+		GameManager.PlayBgm(0);
+		GameManager.SetBgmVolume(0.1f);
 	}
 
 	private void Update()
@@ -91,6 +96,7 @@ public class IntroducingManager : MonoBehaviour
 		foreach (string sentence in data)
 		{
 			GameManager.PlaySfx(0);
+			speechBubbleText.text = "";
 			yield return StartTyping(sentence);
 			float elapsedTime = 0f;
 			while (elapsedTime < speechBubbleDuration)
@@ -103,7 +109,6 @@ public class IntroducingManager : MonoBehaviour
 				elapsedTime += Time.deltaTime;
 				yield return null;
 			}
-			speechBubbleText.text = "";
 			yield return null;
 		}
 		
@@ -137,6 +142,7 @@ public class IntroducingManager : MonoBehaviour
 
 	public void FamilyPictureClicked()
 	{
-		
+		StartCoroutine(StartIntroducing("family picture"));
+		familyPicture.ObjectClicked();
 	}
 }

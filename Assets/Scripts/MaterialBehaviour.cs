@@ -5,15 +5,15 @@ using UnityEngine.UI;
 public class MaterialBehaviour : MonoBehaviour
 {
 	[Header("References")]
-	[SerializeField] private Material outlineMaterial;
+	[SerializeField] private Image image;
 
 	private void Awake()
 	{
-		outlineMaterial = GetComponent<Image>().material;
+		image = GetComponent<Image>();
 	}
 
 	public void ObjectClicked()
 	{
-		outlineMaterial = null;
+		image.material = null;
 	}
 }
