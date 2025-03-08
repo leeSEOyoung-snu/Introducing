@@ -11,7 +11,6 @@ public class IntroducingManager : MonoBehaviour
 	[SerializeField] private GameObject speechBubble;
 	[SerializeField] private TextMeshProUGUI speechBubbleText;
 	[SerializeField] private GameObject fadePanel;
-	[SerializeField] private GameObject powerOffPanel;
 	
 	[Header("Values")]
 	[SerializeField] private float speechBubbleDuration;
@@ -25,6 +24,14 @@ public class IntroducingManager : MonoBehaviour
 	[Header("Material Behaviours")]
 	[SerializeField] private MaterialBehaviour familyPicture;
 	[SerializeField] private MaterialBehaviour tkdPicture;
+	
+	[Header("Computer")]
+	[SerializeField] private bool isComputerOn;
+	[SerializeField] private Image powerButtonImage;
+	[SerializeField] private Sprite powerButtonOnSprite, powerButtonOffSprite;
+	[SerializeField] private GameObject powerOffPanel;
+	[SerializeField] private GameObject desktopScreen;
+	[SerializeField] private GameObject folderScreen;
 	
 	private Dictionary<string, string[]> _introducingData = new Dictionary<string, string[]>()
 	{
@@ -68,7 +75,11 @@ public class IntroducingManager : MonoBehaviour
 
 	private void Awake()
 	{
+		isComputerOn = false;
 		powerOffPanel.SetActive(true);
+		desktopScreen.SetActive(true);
+		folderScreen.SetActive(false);
+		
 		fadePanel.SetActive(true);
 		speechBubble.SetActive(false);
 	}
@@ -172,5 +183,41 @@ public class IntroducingManager : MonoBehaviour
 		if (isIntroducing) return;
 		StartCoroutine(StartIntroducing("tkd"));
 		tkdPicture.TurnOffMaterial();
+	}
+
+
+
+
+	public void PowerButtonClicked()
+	{
+		if (isIntroducing) return;
+		GameManager.PlaySfx(1);
+		if (isComputerOn) 
+		{
+			isComputerOn = false;
+			powerButtonImage.sprite = powerButtonOffSprite;
+			powerOffPanel.SetActive(true);
+		}
+		else
+		{
+			isComputerOn = true;
+			powerButtonImage.sprite = powerButtonOnSprite;
+			powerOffPanel.SetActive(false);
+		}
+	}
+	public void FolderIconClicked()
+	{
+		if (isIntroducing) return;
+		GameManager.PlaySfx(2);
+		desktopScreen.SetActive(false);
+		folderScreen.SetActive(true);
+	}
+
+	public void CloseFolderClicked()
+	{
+		if (isIntroducing) return;
+		GameManager.PlaySfx(2);
+		desktopScreen.SetActive(true);
+		folderScreen.SetActive(false);
 	}
 }
