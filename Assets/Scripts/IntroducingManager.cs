@@ -25,6 +25,9 @@ public class IntroducingManager : MonoBehaviour
 	[SerializeField] private MaterialBehaviour familyPicture;
 	[SerializeField] private MaterialBehaviour tkdPicture;
 	[SerializeField] private MaterialBehaviour tennisBall;
+	[SerializeField] private MaterialBehaviour snuPicture;
+	[SerializeField] private MaterialBehaviour books;
+	[SerializeField] private MaterialBehaviour ds;
 	
 	[Header("Computer")]
 	[SerializeField] private bool isComputerOn;
@@ -52,13 +55,6 @@ public class IntroducingManager : MonoBehaviour
 				"그만큼 나는 많은 사랑을 받고 자랐어.",
 				"이 사진은 작년 겨울 모두 함께 후쿠오카로 여행을 가서 찍은 사진이야.",
 				"맛있는 것도 잔뜩 먹고, 따뜻한 물에 몸도 담그고, 나에게는 아주 행복한 기억으로 남아있어."
-			}
-		},
-		
-		{ "snu", new []
-			{
-				"나는 자유전공학부에 23학번으로 입학했어.",
-				""
 			}
 		},
 
@@ -113,6 +109,40 @@ public class IntroducingManager : MonoBehaviour
 				"수능 공부를 할 때에는 1년 반 동안 허송 세월을 보냈다는 불안감이 존재했어.",
 				"하지만 지금 돌이켜보면 전혀 그렇지 않은 것 같아.",
 				"그 시간 동안 아주 많은 것들을 배울 수 있으니까 말이야."
+			}
+		},
+		
+		{ "snu", new []
+			{
+				"나는 자유전공학부에 23학번으로 입학해서 컴퓨터공학과 정보문화학을 전공하고 있어.",
+				"처음 입학할 때는 정말 기뻤는데...",
+				"지금은 30살 전에 졸업이나 할 수 있을지 걱정이야.",
+				"좋은 학교 오래 다녀야지~"
+			}
+		},
+
+		{
+			"books", new []
+			{
+				"비록 나는 컴퓨터를 공부하는 공학도이지만, 문학을 사랑해.",
+				"좋은 글을 읽으면 달콤한 사과 냄새, 비가 온 뒤의 아스팔트 냄새, 밀려오는 바다의 짠 냄새, 온갖 냄새를 다 맡을 수 있거든.",
+				"가장 좋아하는 작가는 김유정이고, 가장 좋아하는 작품은 소낙비야.",
+				"소낙비를 읽을 때면 한 여름의 쿱쿱하고 불쾌한 냄새가 나.",
+				"수능 문학 속 김유정은 순수함을 그려내는 작가라는 느낌이 강했지만, 김유정 전집 속 김유정은 전혀 다르다는 것을 깨닫고 큰 충격을 받았어."
+			}
+		},
+
+		{
+			"ds", new []
+			{
+				"게임에 관한 나의 가장 오래된 기억은 닌텐도ds를 처음 받았을 때야.",
+				"초등학교 2학년 크리스마스 선물로 부모님을 조르고 졸라서 얻은 게임기지.",
+				"엄마는 절대 못 사주신다며 나를 꾸짖었지만, 결국에는 크리스마스 당일날 아빠가 닌텐도ds를 들고 오시더라.",
+				"아빠는 TT칩에 여러 게임들을 넣어주셨어.",
+				"그때는 이게 불법인지도 모르고 재밌게 플레이했었지.",
+				"동물의 숲, 리듬 히어로, 리듬 천국, 마리오64, 레이튼 교수 시리즈...",
+				"매일같이 수많은 게임들을 플레이했어.",
+				"게임에 행복이라는 단어를 결부하기 시작한 것은 이때부터인 것 같아."
 			}
 		}
 	};
@@ -221,19 +251,35 @@ public class IntroducingManager : MonoBehaviour
 		StartCoroutine(StartIntroducing("family picture"));
 		familyPicture.TurnOffMaterial();
 	}
-
 	public void TkdPictureClicked()
 	{
 		if (isIntroducing) return;
 		StartCoroutine(StartIntroducing("tkd"));
 		tkdPicture.TurnOffMaterial();
 	}
-
 	public void TennisClicked()
 	{
 		if (isIntroducing) return;
 		StartCoroutine(StartIntroducing("tennis"));
 		tennisBall.TurnOffMaterial();
+	}
+	public void SnuPictureClicked()
+	{
+		if (isIntroducing) return;
+		StartCoroutine(StartIntroducing("snu"));
+		snuPicture.TurnOffMaterial();
+	}
+	public void BooksClicked()
+	{
+		if (isIntroducing) return;
+		StartCoroutine(StartIntroducing("books"));
+		books.TurnOffMaterial();
+	}
+	public void DsClicked()
+	{
+		if (isIntroducing) return;
+		StartCoroutine(StartIntroducing("ds"));
+		ds.TurnOffMaterial();
 	}
 
 
