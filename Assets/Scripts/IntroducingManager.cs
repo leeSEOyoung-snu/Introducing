@@ -24,6 +24,7 @@ public class IntroducingManager : MonoBehaviour
 	
 	[Header("Material Behaviours")]
 	[SerializeField] private MaterialBehaviour familyPicture;
+	[SerializeField] private MaterialBehaviour tkdPicture;
 	
 	private Dictionary<string, string[]> _introducingData = new Dictionary<string, string[]>()
 	{
@@ -43,6 +44,24 @@ public class IntroducingManager : MonoBehaviour
 				"그만큼 나는 많은 사랑을 받고 자랐어.",
 				"이 사진은 작년 겨울 모두 함께 후쿠오카로 여행을 가서 찍은 사진이야.",
 				"맛있는 것도 잔뜩 먹고, 따뜻한 물에 몸도 담그고, 나에게는 아주 행복한 기억으로 남아있어."
+			}
+		},
+		
+		{ "snu", new []
+			{
+				"나는 자유전공학부에 23학번으로 입학했어.",
+				""
+			}
+		},
+
+		{ "tkd", new []
+			{
+				"태권도부는 나에게 안식처 같은 곳이야.",
+				"좋은 친구들과 함께 웃고 떠들며 운동을 하다보면 많은 힘을 얻을 수 있어.",
+				"이 사진은 얼마전 도쿄대 태권도부와 교류전을 진행했을 때 찍은 사진이야.",
+				"정말 감사하게도 도쿄대 분들이 매년 우리 태권도부를 찾아와 주고 계셔.",
+				"한국에 머무르는 동안 맛집도 가고, 술도 마시고, 정말 즐거웠어!",
+				"이번 여름 방학에는 도쿄에 찾아가서 함께 놀 생각이야."
 			}
 		}
 	};
@@ -140,9 +159,18 @@ public class IntroducingManager : MonoBehaviour
 		}
 	}
 
+	
 	public void FamilyPictureClicked()
 	{
+		if (isIntroducing) return;
 		StartCoroutine(StartIntroducing("family picture"));
-		familyPicture.ObjectClicked();
+		familyPicture.TurnOffMaterial();
+	}
+
+	public void TkdPictureClicked()
+	{
+		if (isIntroducing) return;
+		StartCoroutine(StartIntroducing("tkd"));
+		tkdPicture.TurnOffMaterial();
 	}
 }

@@ -12,7 +12,7 @@ public class MaterialBehaviour : MonoBehaviour
 		image = GetComponent<Image>();
 	}
 
-	public void ObjectClicked()
+	public void TurnOffMaterial()
 	{
 		image.material = null;
 	}
